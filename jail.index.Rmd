@@ -1,0 +1,80 @@
+---
+title: "A3: Incarceration"
+output: html_document
+---
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+source("jail.pop.R")
+source('chart1_example.R')
+source('chart2_example.R')
+source('example_map.R')
+```
+### Introduction
+
+An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+
+### Summary Information
+```{r echo=FALSE, message=FALSE}
+kable(all_states)
+```
+This data shows us the state with the highest jail population in each state. This is important to note that California has the highest majority of AAPI, Black, White, and Latinx inmates. Because California has a higher population than most other states, their data will be skewed when looking at it. Their state population is different than other states which can tell us about how population density impacts the data we see while doing data analysis. 
+
+### The Dataset
+
+Who collected the data?  
+Vera institute of justice
+
+How was the data collected or generated?  
+Vera merged and combined different data set like BJS,COJ,DCRP and annual surverys of jails to create the county level dataset. This is done to show us the differences. 
+
+Why was the data collected? 
+Vera wanted to informed the public about mass incarcerations to help guide change. Also to show us how incaracerations is displayed in society. 
+
+How many observations (rows) are in your data? 
+153811
+
+How many features (columns) are in the data?
+121
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+How do white inmates compare to black inmates and how many people go in and out. And the comparison between all of them.
+
+What are possible limitations or problems with this data? 
+
+Some limitations to this data set is human error. This is because sometimes people might collect the data incorrectly or have bias and leave some data aside. Data can also be collected differently based on when and how it was collected. The person collecting the data is also important because there could be human error which would skew the data to show us a false reality. If it was a machine that was collecting the data this could also be an issue because machines can sometimes be faulty. Since the machine takes in so much information, it might be hard to catch when or what went wrong with the machine. Some other types of limitations are not having a specified question or data that was collected. Since the data is not specified, some data might have to be classified as the next closest thing which would also skew the data. Other limitations include not having specific data, when it is counting the races, there could be some races that are not included in those categories that people might have wanted to look at and examine and solve, but were not able to. This makes it difficult to truly analyze data from a neutral perspective. 
+
+### Trends Over Time Chart
+
+- Show more than one, but fewer than ~10 trends
+  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
+- You must have clear x and y axis labels
+- The chart needs a clear title 
+- You need a legend for your different line colors and a clear legend title
+
+When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
+
+Here's an example of how to run an R script inside an RMarkdown file:
+
+```{r echo = FALSE}
+plot(chart_2)
+```
+
+This chart shows the total number of incarcerations over the years and the total number of incarcerations of black inmates over the years. As the years pass buy there has been a great spike of black incaracerations in California. This trend is important to note because this shows us how many black inmates make up the total number of incarcerations. 
+
+
+### Variable Comparison Chart
+
+```{r echo = FALSE, warning= FALSE, message = FALSE, error=FALSE}
+plot(Div_scatt)
+```
+
+This chart shows us the distribution of jail populations in different divisions. They are separated in male and female inmate populations with y and x axis. This is important to note how some divisions have higher populations than others. Smaller divisions show less inmate populations which makes sense because they have smaller overall population, thus limiting how many inmates they can have.
+
+### Map   
+
+```{r echo = FALSE, warning= FALSE, message = FALSE, error=FALSE}
+plot(chart_3)
+```
+
+This map shows us the total black jail population from 1970 to 2018. The areas with a more dense population is darker in red and the white means lower population. This is important to note because the data shows us the density of inmate population of each state. This data can show us how much space each state has for inmates and how many people they can incarcerate. Texas and California are the most red which shows that those two states are the highest in black inmate population.    
